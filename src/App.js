@@ -3,17 +3,28 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import "@aws-amplify/ui-react/styles.css";
+import {
+  withAuthenticator,
+  Button,
+  Heading,
+  Image,
+  View,
+  Card,
+} from "@aws-amplify/ui-react";
+
+function App({signOut}) {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Hello from V2.1</h1>
       </header>
+      <button onClick={signOut}>SignOut</button>
     </div>
   )
 }
-export default App;
+export default withAuthenticator(App);
 
 /*
 import React from 'react';
